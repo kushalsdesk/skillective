@@ -36,14 +36,19 @@ export default function LoginForm() {
     // Add your login logic here
   }
 
+  function handleSocialLogin(provider: string) {
+    console.log(`Login with ${provider}`);
+    // Implement social login logic here
+  }
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
       <FormField
         id="email"
         label="Email"
         type="email"
         placeholder="m@example.com"
-        icon={<AtSign />}
+        icon={<AtSign className="h-4 w-4" />}
         error={errors.email?.message}
         register={register("email")}
       />
@@ -53,7 +58,7 @@ export default function LoginForm() {
         label="Password"
         type="password"
         placeholder="••••••••"
-        icon={<Lock />}
+        icon={<Lock className="h-4 w-4" />}
         error={errors.password?.message}
         register={register("password")}
         link={{
@@ -64,12 +69,12 @@ export default function LoginForm() {
 
       <Button
         type="submit"
-        className="w-full border border-purple-500 bg-transparent hover:bg-purple-950/30 text-purple-400"
+        className="w-full mt-2 bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white border-0 transition-all duration-200"
       >
         Sign In
       </Button>
 
-      <SocialButtons />
+      <SocialButtons onSocialLogin={handleSocialLogin} />
     </form>
   );
 }

@@ -29,15 +29,15 @@ export default function FormField({
   link,
 }: FormFieldProps) {
   return (
-    <div className="space-y-2">
+    <div className="space-y-1.5">
       <div className="flex items-center justify-between">
-        <Label htmlFor={id} className="text-zinc-300">
+        <Label htmlFor={id} className="text-zinc-300 text-sm font-medium">
           {label}
         </Label>
         {link && (
           <a
             href={link.href}
-            className="text-sm text-purple-400 hover:text-purple-300"
+            className="text-xs text-purple-400 hover:text-purple-300 transition-colors"
           >
             {link.text}
           </a>
@@ -45,7 +45,7 @@ export default function FormField({
       </div>
       <div className="relative">
         {icon && (
-          <div className="absolute left-3 top-3 h-4 w-4 text-zinc-500">
+          <div className="absolute left-1 top-1/2 -translate-y-1/2 text-zinc-500 transition-colors group-focus-within:text-purple-400">
             {icon}
           </div>
         )}
@@ -54,16 +54,17 @@ export default function FormField({
           type={type}
           placeholder={placeholder}
           className={cn(
-            "bg-zinc-800/50 border-zinc-700 focus:border-purple-500/50 focus:ring-purple-500/20",
-            icon && "pl-10",
-            error &&
-              "border-red-500/50 focus:border-red-500/50 focus:ring-red-500/20",
+            "group border-0 border-b-2 rounded-none px-0 py-2 h-auto bg-transparent text-zinc-100",
+            "border-zinc-800 focus-visible:border-purple-500 focus-visible:ring-0 focus-visible:ring-offset-0",
+            "placeholder:text-zinc-600 placeholder:text-xs ",
+            icon && "pl-7",
+            error && "border-red-500/50 focus-visible:border-red-500",
           )}
           {...register}
         />
       </div>
       {error && (
-        <p className="text-red-400 text-sm flex items-center gap-1 mt-1">
+        <p className="text-red-400 text-xs flex items-center gap-1 mt-1">
           <AlertCircle className="h-3 w-3" />
           {error}
         </p>

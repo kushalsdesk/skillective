@@ -8,7 +8,6 @@ import { AtSign, Lock, User } from "lucide-react";
 import FormField from "@/components/auth/FormField";
 import SocialButtons from "@/components/auth/SocialButtons";
 
-// Signup form schema
 const signupSchema = z
   .object({
     firstName: z
@@ -53,14 +52,19 @@ export default function SignupForm() {
     // Add your signup logic here
   }
 
+  function handleSocialLogin(provider: string) {
+    console.log(`Signup with ${provider}`);
+    // Implement social signup logic here
+  }
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
       <div className="grid grid-cols-2 gap-4">
         <FormField
           id="firstName"
           label="First name"
           placeholder="John"
-          icon={<User />}
+          icon={<User className="h-4 w-4" />}
           error={errors.firstName?.message}
           register={register("firstName")}
         />
@@ -69,7 +73,7 @@ export default function SignupForm() {
           id="lastName"
           label="Last name"
           placeholder="Doe"
-          icon={<User />}
+          icon={<User className="h-4 w-4" />}
           error={errors.lastName?.message}
           register={register("lastName")}
         />
@@ -80,7 +84,7 @@ export default function SignupForm() {
         label="Email"
         type="email"
         placeholder="m@example.com"
-        icon={<AtSign />}
+        icon={<AtSign className="h-4 w-4" />}
         error={errors.email?.message}
         register={register("email")}
       />
@@ -90,7 +94,7 @@ export default function SignupForm() {
         label="Password"
         type="password"
         placeholder="••••••••"
-        icon={<Lock />}
+        icon={<Lock className="h-4 w-4" />}
         error={errors.password?.message}
         register={register("password")}
       />
@@ -100,19 +104,19 @@ export default function SignupForm() {
         label="Confirm Password"
         type="password"
         placeholder="••••••••"
-        icon={<Lock />}
+        icon={<Lock className="h-4 w-4" />}
         error={errors.confirmPassword?.message}
         register={register("confirmPassword")}
       />
 
       <Button
         type="submit"
-        className="w-full border border-purple-500 bg-transparent hover:bg-purple-950/30 text-purple-400"
+        className="w-full mt-2 bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white border-0 transition-all duration-200"
       >
         Create Account
       </Button>
 
-      <SocialButtons />
+      <SocialButtons onSocialLogin={handleSocialLogin} />
     </form>
   );
 }
