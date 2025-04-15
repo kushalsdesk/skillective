@@ -37,7 +37,7 @@ export default function FormField({
         {link && (
           <a
             href={link.href}
-            className="text-xs text-purple-400 hover:text-purple-300 transition-colors"
+            className="text-xs font-semibold text-purple-400 hover:text-purple-300 transition-colors"
           >
             {link.text}
           </a>
@@ -64,8 +64,8 @@ export default function FormField({
         />
       </div>
       {error && (
-        <p className="text-red-400 text-xs flex items-center gap-1 mt-1">
-          <AlertCircle className="h-3 w-3" />
+        <p className="text-red-400  font-bold text-xs flex items-center gap-1 mt-1">
+          <AlertCircle className="h-4 w-4" />
           {error}
         </p>
       )}

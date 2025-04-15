@@ -69,9 +69,9 @@ export default function LoginForm() {
 
       <Button
         type="submit"
-        className="w-full mt-2 bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white border-0 transition-all duration-200"
+        className="w-full mt-2 bg-gradient-to-r from-purple-500/80 to-purple-700/80 hover:from-purple-600 hover:to-purple-800 text-white border-0 transition-all duration-200"
       >
-        Sign In
+        Log In
       </Button>
 
       <SocialButtons onSocialLogin={handleSocialLogin} />

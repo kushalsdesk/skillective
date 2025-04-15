@@ -10,12 +10,7 @@ import SocialButtons from "@/components/auth/SocialButtons";
 
 const signupSchema = z
   .object({
-    firstName: z
-      .string()
-      .min(2, { message: "First name must be at least 2 characters" }),
-    lastName: z
-      .string()
-      .min(2, { message: "Last name must be at least 2 characters" }),
+    name: z.string().min(2, { message: "Must be at least 5 characters" }),
     email: z.string().email({ message: "Please enter a valid email address" }),
     password: z
       .string()
@@ -39,8 +34,7 @@ export default function SignupForm() {
   } = useForm<SignupFormValues>({
     resolver: zodResolver(signupSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
+      name: "",
       email: "",
       password: "",
       confirmPassword: "",
@@ -49,33 +43,22 @@ export default function SignupForm() {
 
   function onSubmit(data: SignupFormValues) {
     console.log("Signup data:", data);
-    // Add your signup logic here
   }
 
   function handleSocialLogin(provider: string) {
     console.log(`Signup with ${provider}`);
-    // Implement social signup logic here
   }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-      <div className="grid grid-cols-2 gap-4">
+      <div className="">
         <FormField
-          id="firstName"
-          label="First name"
-          placeholder="John"
+          id="name"
+          label="Name"
+          placeholder="Anything Anything"
           icon={<User className="h-4 w-4" />}
-          error={errors.firstName?.message}
-          register={register("firstName")}
-        />
-
-        <FormField
-          id="lastName"
-          label="Last name"
-          placeholder="Doe"
-          icon={<User className="h-4 w-4" />}
-          error={errors.lastName?.message}
-          register={register("lastName")}
+          error={errors.name?.message}
+          register={register("name")}
         />
       </div>
 

@@ -15,6 +15,7 @@ import SignupForm from "@/components/auth/SignupForm";
 import Image from "next/image";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
+import IslandNav from "../IslandNav";
 
 export default function AuthForm() {
   const [activeTab, setActiveTab] = useState<"login" | "signup">("login");
@@ -75,6 +76,8 @@ export default function AuthForm() {
           </Tabs>
         </CardContent>
       </Card>
+
+      <IslandNav />
     </div>
   );
 }
