@@ -97,7 +97,7 @@ export default function LandingPage() {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold">Why InterviewAI?</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 space-y-4 hover:border-zinc-700 transition-all">
+              <div className="bg-zinc-900/40 hover:bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 space-y-4 hover:border-purple-500/50 transition-all">
                 <div className="rounded-full bg-purple-950/30 p-3 w-fit border border-purple-500/20">
                   <MessageSquare className="h-6 w-6 text-purple-400" />
                 </div>
@@ -107,7 +107,7 @@ export default function LandingPage() {
                   tech stack preferences.
                 </p>
               </div>
-              <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 space-y-4 hover:border-zinc-700 transition-all">
+              <div className="bg-zinc-900/40 hover:bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 space-y-4 hover:border-purple-500/50 transition-all">
                 <div className="rounded-full bg-purple-950/30 p-3 w-fit border border-purple-500/20">
                   <Mic className="h-6 w-6 text-purple-400" />
                 </div>
@@ -117,7 +117,7 @@ export default function LandingPage() {
                   technology for a realistic experience.
                 </p>
               </div>
-              <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 space-y-4 hover:border-zinc-700 transition-all">
+              <div className="bg-zinc-900/40 hover:bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 space-y-4 hover:border-purple-500/50 transition-all">
                 <div className="rounded-full bg-purple-950/30 p-3 w-fit border border-purple-500/20">
                   <Award className="h-6 w-6 text-purple-400" />
                 </div>
@@ -134,7 +134,7 @@ export default function LandingPage() {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold">Success Stories</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 space-y-4 hover:border-zinc-700 transition-all">
+              <div className="bg-zinc-900/40 hover:bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 space-y-4 hover:border-purple-500/50 transition-all">
                 <div className="flex items-center">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <Star
@@ -158,7 +158,7 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
-              <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 space-y-4 hover:border-zinc-700 transition-all">
+              <div className="bg-zinc-900/40 hover:bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 space-y-4 hover:border-purple-500/50 transition-all">
                 <div className="flex items-center">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <Star
@@ -182,7 +182,7 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
-              <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 space-y-4 hover:border-zinc-700 transition-all">
+              <div className="bg-zinc-900/40 hover:bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 space-y-4 hover:border-purple-500/50 transition-all">
                 <div className="flex items-center">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <Star

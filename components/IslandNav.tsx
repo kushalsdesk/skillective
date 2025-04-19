@@ -5,15 +5,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { CreateIcon, HomeIcon, InterviewsIcon } from "./custom";
+import { getLoggedInUser } from "@/lib/server/appwrite";
 
 const IslandNav = () => {
   const pathname = usePathname();
   const [isLoggedIn, setIsLoggedIn] = useState<boolean | null>(null);
 
   useEffect(() => {
-    const checkAuthStatus = () => {
-      const hasAuthToken = localStorage.getItem("authToken");
-      setIsLoggedIn(!!true);
+    const checkAuthStatus = async () => {
+      const hasAuthToken = await getLoggedInUser();
+      setIsLoggedIn(!!hasAuthToken);
     };
 
     checkAuthStatus();
@@ -32,7 +33,7 @@ const IslandNav = () => {
 
   return (
     <div className="fixed bottom-1 md:bottom-4 left-1/2 -translate-x-1/2 z-50 min-w-[85%] md:min-w-[25%]">
-      <div className="flex justify-around items-center gap-1 md:gap-2 bg-zinc-900/90 backdrop-blur-md border border-purple-900 rounded-md p-1.5 shadow-lg">
+      <div className="flex justify-around items-center gap-1 md:gap-2 bg-zinc-900/40 backdrop-blur-md border border-purple-900 rounded-md p-1.5 shadow-lg">
         <Link
           href="/"
           className={`flex items-center justify-center h-10 w-10 rounded-full transition-all duration-300 ${
@@ -68,15 +69,7 @@ const IslandNav = () => {
           }`}
           aria-label="Create Interview"
         >
-          <CreateIcon
-            className={`h-6 w-6 ${
-              isLoggedIn === null || isActive("/create")
-                ? "text-purple-400"
-                : isLoggedIn
-                  ? "text-green-500"
-                  : "text-red-500"
-            }`}
-          />
+          <CreateIcon className={`h-6 w-6 `} />
         </Link>
         <Link
           href={profileLinkDestination}
@@ -87,15 +80,7 @@ const IslandNav = () => {
           }`}
         >
           <div className="h-10 w-10 rounded-full flex justify-center items-center ">
-            <User
-              className={`h-6 w-6 ${
-                isLoggedIn === null || isActive("/profile")
-                  ? "text-purple-400"
-                  : isLoggedIn
-                    ? "text-green-500"
-                    : "text-red-500"
-              }`}
-            />
+            <User className={`h-6 w-6 `} />
           </div>
         </Link>
       </div>

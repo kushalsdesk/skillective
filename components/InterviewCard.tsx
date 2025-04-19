@@ -30,7 +30,7 @@ export default function InterviewCard({
   mode,
 }: InterviewCardProps) {
   return (
-    <Card className="bg-zinc-900 border-zinc-800 hover:border-purple-500/30 transition-all">
+    <Card className="bg-zinc-900/40 backdrop-blur-sm border border-zinc-800 hover:bg-zinc-900/80 hover:border-purple-500/50 transition-all">
       <CardHeader className="pb-3">
         <div className="flex justify-between items-start">
           <CardTitle className="text-lg text-zinc-100">{title}</CardTitle>

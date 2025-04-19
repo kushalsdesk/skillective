@@ -79,7 +79,7 @@ export default function ProfilePage() {
         <div className="grid gap-8 md:grid-cols-[300px_1fr]">
           {/* User Profile Sidebar */}
           <div className="space-y-6">
-            <Card className="bg-zinc-900 border-zinc-800">
+            <Card className="bg-zinc-900/40 backdrop-blur-md border-zinc-800">
               <CardContent className="p-6 flex flex-col items-center text-center">
                 <div className="relative h-24 w-24 rounded-full overflow-hidden mb-4 border-2 border-purple-500/30">
                   <Image
@@ -103,11 +103,7 @@ export default function ProfilePage() {
                     </span>
                     <span>Level {user.level}</span>
                   </div>
-                  <Progress
-                    value={xpProgress}
-                    className="h-2 bg-zinc-800"
-                    indicatorClassName="bg-purple-500"
-                  />
+                  <Progress value={xpProgress} className="h-2 bg-zinc-800" />
                 </div>
                 <div className="grid grid-cols-2 gap-4 w-full mt-6">
                   <div className="flex flex-col items-center p-3 rounded-lg bg-zinc-800 border border-zinc-700">
@@ -131,7 +127,7 @@ export default function ProfilePage() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="bg-zinc-900 border-zinc-800">
+            <Card className="bg-zinc-900/40 backdrop-blur-md border-zinc-800">
               <CardHeader>
                 <CardTitle className="text-zinc-100">Badges</CardTitle>
                 <CardDescription className="text-zinc-400">
@@ -197,7 +193,7 @@ export default function ProfilePage() {
                 </TabsTrigger>
               </TabsList>
               <TabsContent value="interviews" className="mt-6">
-                <Card className="bg-zinc-900 border-zinc-800">
+                <Card className="bg-zinc-900/40 backdrop-blur-md border-zinc-800">
                   <CardHeader>
                     <CardTitle className="text-zinc-100">
                       Your Interview History
@@ -285,7 +281,7 @@ export default function ProfilePage() {
                 </Card>
               </TabsContent>
               <TabsContent value="stats" className="mt-6">
-                <Card className="bg-zinc-900 border-zinc-800">
+                <Card className="bg-zinc-900/40 backdrop-blur-md border-zinc-800">
                   <CardHeader>
                     <CardTitle className="text-zinc-100">
                       Performance Statistics

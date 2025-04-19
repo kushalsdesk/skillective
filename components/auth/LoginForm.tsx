@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { AtSign, Lock } from "lucide-react";
 import FormField from "@/components/auth/FormField";
 import SocialButtons from "@/components/auth/SocialButtons";
+import { useRouter } from "next/navigation";
 
 // Login form schema
 const loginSchema = z.object({
@@ -31,10 +32,28 @@ export default function LoginForm() {
     },
   });
 
-  function onSubmit(data: LoginFormValues) {
-    console.log("Login data:", data);
-    // Add your login logic here
-  }
+  const router = useRouter();
+  const onSubmit = async (data: LoginFormValues) => {
+    const { email, password } = data;
+
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        router.push("/");
+      } else {
+        console.log(result.error);
+      }
+    } catch (err) {
+      console.error("Login Failed:", err);
+    }
+  };
 
   function handleSocialLogin(provider: string) {
     console.log(`Login with ${provider}`);

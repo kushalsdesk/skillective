@@ -78,7 +78,7 @@ export default function CreateInterviewPage() {
             </h1>
           </div>
 
-          <Card className="bg-zinc-900 border-zinc-800">
+          <Card className="bg-zinc-900/40 backdrop-blur-md border border-zinc-800">
             <CardHeader>
               <CardTitle className="text-zinc-100">Interview Details</CardTitle>
               <CardDescription className="text-zinc-400">
